@@ -3,35 +3,38 @@
 // =========================
 
 const themeBtn = document.getElementById("theme-toggle");
-
 const body = document.body;
 
-const savedTheme = localStorage.getItem("theme");
+if(themeBtn){
 
-if(savedTheme === "light"){
+    const savedTheme = localStorage.getItem("theme");
 
-    body.classList.add("light-theme");
+    if(savedTheme === "light"){
 
-    themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-
-}
-
-themeBtn.addEventListener("click",()=>{
-
-    body.classList.toggle("light-theme");
-
-    if(body.classList.contains("light-theme")){
-
-        localStorage.setItem("theme","light");
+        body.classList.add("light-theme");
 
         themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
 
-    }else{
-
-        localStorage.setItem("theme","dark");
-
-        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-
     }
 
-});
+    themeBtn.addEventListener("click",()=>{
+
+        body.classList.toggle("light-theme");
+
+        if(body.classList.contains("light-theme")){
+
+            localStorage.setItem("theme","light");
+
+            themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+
+        }else{
+
+            localStorage.setItem("theme","dark");
+
+            themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+
+        }
+
+    });
+
+}
