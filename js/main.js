@@ -255,23 +255,6 @@ AOS.init({
 });
 
 // =========================
-// Loader
-// =========================
-
-window.addEventListener("load",()=>{
-
-    const loader=document.getElementById("loader");
-
-    setTimeout(()=>{
-
-        loader.style.opacity="0";
-        loader.style.visibility="hidden";
-
-    },2500);
-
-});
-
-// =========================
 // Cursor Glow
 // =========================
 
