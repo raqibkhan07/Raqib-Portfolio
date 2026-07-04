@@ -1,0 +1,72 @@
+/* ===================================
+   GOOGLE FONT
+=================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===================================
+   ROOT VARIABLES
+=================================== */
+
+:root{
+
+    /* Colors */
+
+    --primary-color:#7c3aed;
+    --secondary-color:#4f46e5;
+    --accent-color:#06b6d4;
+
+    --white:#ffffff;
+    --black:#000000;
+
+    --text-color:#e5e7eb;
+    --text-light:#9ca3af;
+
+    --bg-color:#050816;
+    --bg-light:#0b1120;
+    --card-color:#111827;
+
+    --border-color:rgba(255,255,255,.08);
+
+    /* Gradient */
+
+    --gradient:linear-gradient(135deg,#7c3aed,#4f46e5,#06b6d4);
+
+    /* Shadow */
+
+    --shadow-lg:0 15px 35px rgba(0,0,0,.35);
+    --shadow-sm:0 5px 15px rgba(0,0,0,.15);
+
+    /* Radius */
+
+    --radius-sm:8px;
+    --radius-md:15px;
+    --radius-lg:25px;
+
+    /* Transition */
+
+    --transition:.35s ease;
+
+    /* Font */
+
+    --font-family:'Poppins',sans-serif;
+
+    /* Width */
+
+    --container-width:1200px;
+
+}
+
+/*==================================
+        LIGHT THEME
+==================================*/
+
+body.light-theme{
+
+    --bg-color:#f8fafc;
+
+    --text-color:#111827;
+
+    --white:#111827;
+
+}
