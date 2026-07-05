@@ -373,3 +373,109 @@ font-size:34px;
 }
 
 }
+
+/*==================================
+      MOBILE HERO FIX
+==================================*/
+
+@media (max-width:768px){
+
+.hero{
+
+    min-height:auto;
+
+    padding:100px 0 60px;
+
+}
+
+.hero-content{
+
+    display:flex;
+
+    flex-direction:column-reverse;
+
+    align-items:center;
+
+    gap:35px;
+
+}
+
+.hero-left{
+
+    text-align:center;
+
+    width:100%;
+
+}
+
+.hero-left h1{
+
+    font-size:38px;
+
+    line-height:1.2;
+
+}
+
+.hero-left h2{
+
+    font-size:22px;
+
+}
+
+.hero-left p{
+
+    font-size:16px;
+
+    max-width:320px;
+
+    margin:15px auto;
+
+}
+
+.hero-right{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-right img{
+
+    width:260px;
+
+    max-width:85%;
+
+    height:auto;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.hero-buttons .btn{
+
+    width:220px;
+
+}
+
+.hero-social{
+
+    justify-content:center;
+
+    margin-top:20px;
+
+}
+
+}
