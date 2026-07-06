@@ -176,6 +176,19 @@ window.addEventListener("load", () => {
 
                 loader.classList.add("hide");
 
+// Header Refresh
+const header = document.querySelector(".header");
+
+if (header) {
+
+    header.style.display = "none";
+
+    requestAnimationFrame(() => {
+        header.style.display = "";
+    });
+
+}
+
             },3500);
 
         }

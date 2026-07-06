@@ -54,6 +54,16 @@ window.addEventListener("scroll", () => {
 });
 
 // =========================
+// Initialize Header
+// =========================
+
+window.addEventListener("load", () => {
+
+    header.classList.toggle("sticky", window.scrollY > 50);
+
+});
+
+// =========================
 // Active Menu On Scroll
 // =========================
 
