@@ -260,13 +260,16 @@ AOS.init({
 
 const glow = document.getElementById("cursor-glow");
 
-document.addEventListener("mousemove",(e)=>{
+if (glow && window.innerWidth > 768) {
 
-    glow.style.left = e.clientX + "px";
+    document.addEventListener("mousemove", (e) => {
 
-    glow.style.top = e.clientY + "px";
+        glow.style.left = e.clientX + "px";
+        glow.style.top = e.clientY + "px";
 
-});
+    });
+
+}
 
 // =========================
 // Dynamic Project Modal
@@ -369,31 +372,28 @@ modal.classList.remove("show");
 
 }
 
-const dot=document.querySelector(".cursor-dot");
+const dot = document.querySelector(".cursor-dot");
+const outline = document.querySelector(".cursor-outline");
 
-const outline=document.querySelector(".cursor-outline");
+if (dot && outline && window.innerWidth > 768) {
 
-window.addEventListener("mousemove",(e)=>{
+    window.addEventListener("mousemove",(e)=>{
 
-    dot.style.left=e.clientX+"px";
+        dot.style.left=e.clientX+"px";
+        dot.style.top=e.clientY+"px";
 
-    dot.style.top=e.clientY+"px";
-
-    outline.animate({
-
-        left:e.clientX+"px",
-
-        top:e.clientY+"px"
-
-    },{
-
-        duration:250,
-
-        fill:"forwards"
+        outline.animate({
+            left:e.clientX+"px",
+            top:e.clientY+"px"
+        },{
+            duration:250,
+            fill:"forwards"
+        });
 
     });
 
-});
+}
+
 
 document.querySelectorAll("a,button,.btn").forEach(el=>{
 
@@ -423,6 +423,8 @@ document.querySelectorAll("a,button,.btn").forEach(el=>{
         MAGNETIC EFFECT
 ==================================*/
 
+if (window.innerWidth > 768) {
+
 const magneticItems = document.querySelectorAll(
 ".btn,.project-card,.hero-social a"
 );
@@ -434,7 +436,6 @@ magneticItems.forEach(item=>{
         const rect = item.getBoundingClientRect();
 
         const x = e.clientX - rect.left - rect.width/2;
-
         const y = e.clientY - rect.top - rect.height/2;
 
         item.style.transform =
@@ -449,6 +450,8 @@ magneticItems.forEach(item=>{
     });
 
 });
+
+}
 
 /*==================================
         3D TILT EFFECT
@@ -503,23 +506,22 @@ tiltCards.forEach(card=>{
 ==================================*/
 
 const hero = document.querySelector(".hero");
-
 const orbs = document.querySelectorAll(".orb");
 
-hero.addEventListener("mousemove",(e)=>{
+if (hero) {
+    hero.addEventListener("mousemove", (e) => {
 
-    const x = e.clientX / window.innerWidth;
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
 
-    const y = e.clientY / window.innerHeight;
+        orbs.forEach((orb, index) => {
 
-    orbs.forEach((orb,index)=>{
+            const speed = (index + 1) * 12;
 
-        const speed=(index+1)*12;
+            orb.style.transform =
+                `translate(${x * speed}px, ${y * speed}px)`;
 
-        orb.style.transform=
-
-        `translate(${x*speed}px,${y*speed}px)`;
+        });
 
     });
-
-});
+}

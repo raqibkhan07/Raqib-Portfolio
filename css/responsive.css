@@ -472,9 +472,10 @@ display:none;
 @media(max-width:768px){
 
 .cursor-dot,
-.cursor-outline{
+.cursor-outline,
+#cursor-glow{
 
-display:none;
+display:none !important;
 
 }
 
