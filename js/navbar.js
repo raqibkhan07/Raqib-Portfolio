@@ -6,22 +6,57 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = document.querySelectorAll(".nav-link");
 const header = document.querySelector(".header");
+const overlay = document.querySelector(".menu-overlay");
 
 // =========================
 // Mobile Menu
 // =========================
 
-menuToggle.addEventListener("click", () => {
+menuToggle.addEventListener("click",()=>{
 
     navMenu.classList.toggle("active");
 
     menuToggle.classList.toggle("active");
 
+    overlay.classList.toggle("show");
+
     if(menuToggle.classList.contains("active")){
-        menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+
+        menuToggle.innerHTML='<i class="fa-solid fa-xmark"></i>';
+
     }else{
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
+        menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+
     }
+
+});
+
+overlay.addEventListener("click",()=>{
+
+    navMenu.classList.remove("active");
+
+    overlay.classList.remove("show");
+
+    menuToggle.classList.remove("active");
+
+    menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+
+});
+
+navLinks.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        navMenu.classList.remove("active");
+
+        overlay.classList.remove("show");
+
+        menuToggle.classList.remove("active");
+
+        menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+
+    });
 
 });
 

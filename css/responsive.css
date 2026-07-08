@@ -6,31 +6,153 @@
 
     /* Navbar */
 
-    .nav-menu{
-        position:fixed;
-        top:85px;
-        right:-100%;
-        width:280px;
-        height:100vh;
-        background:#0b1120;
-        display:flex;
-        flex-direction:column;
-        justify-content:flex-start;
-        align-items:center;
-        padding-top:50px;
-        gap:30px;
-        transition:.4s ease;
-    }
-
-    .nav-menu.active{
-        right:0;
-    }
-
     .menu-toggle{
-        display:block;
-    }
 
-    .nav-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:46px;
+    height:46px;
+
+    border-radius:12px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    color:#fff;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:10002;
+
+    transition:.35s;
+
+}
+
+.menu-toggle:hover{
+
+    background:#7c3aed;
+
+}
+
+.nav-menu{
+
+    position:fixed;
+
+    top:0;
+
+    right:-100%;
+
+    width:300px;
+
+    max-width:85%;
+
+    height:100vh;
+
+    padding:110px 25px 40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    background:rgba(10,15,35,.94);
+
+    backdrop-filter:blur(25px);
+
+    box-shadow:-15px 0 40px rgba(0,0,0,.5);
+
+    transition:.45s ease;
+
+    z-index:10001;
+
+}
+
+.nav-menu.active{
+
+    right:0;
+
+}
+
+.nav-menu li{
+
+    width:100%;
+
+}
+
+.nav-menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.nav-menu li a:hover{
+
+    background:rgba(124,58,237,.18);
+
+    color:#9f7aea;
+
+    transform:translateX(8px);
+
+}
+
+.nav-menu li a.active{
+
+    background:#7c3aed;
+
+    color:#fff;
+
+}
+
+.menu-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    backdrop-filter:blur(4px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    z-index:10000;
+
+}
+
+.menu-overlay.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+ .nav-btn{
         display:none;
     }
 
@@ -477,6 +599,43 @@ display:none;
 
 display:none !important;
 
+}
+
+}
+
+@media(max-width:576px){
+
+.loader-ring{
+    width:150px;
+    height:150px;
+}
+
+.loader-logo{
+    width:115px;
+    height:115px;
+    font-size:46px;
+}
+
+.loader-name{
+    font-size:28px;
+}
+
+.loader-role{
+    font-size:15px;
+}
+
+#loaderPercent{
+    font-size:30px;
+}
+
+.loader-skills{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.loader-footer{
+    font-size:12px;
 }
 
 }

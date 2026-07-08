@@ -174,22 +174,18 @@ window.addEventListener("load", () => {
 
             setTimeout(()=>{
 
-                loader.classList.add("hide");
+               loader.classList.add("hide");
 
-// Header Refresh
-const header = document.querySelector(".header");
+setTimeout(() => {
 
-if (header) {
+    loader.remove();
 
-    header.style.display = "none";
+    window.dispatchEvent(new Event("resize"));
+    window.dispatchEvent(new Event("scroll"));
 
-    requestAnimationFrame(() => {
-        header.style.display = "";
-    });
+}, 800);
 
-}
-
-            },3500);
+},3500);
 
         }
 
