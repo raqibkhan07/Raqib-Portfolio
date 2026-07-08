@@ -2017,6 +2017,8 @@ opacity:1;
     #050816;
     z-index:9999;
     transition:1s;
+    pointer-events:none;
+    will-change:opacity;
 }
 
 .loader-container{

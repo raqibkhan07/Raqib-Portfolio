@@ -174,14 +174,32 @@ window.addEventListener("load", () => {
 
             setTimeout(()=>{
 
-               loader.classList.add("hide");
+             loader.classList.add("hide");
 
 setTimeout(() => {
 
     loader.remove();
 
-    window.dispatchEvent(new Event("resize"));
-    window.dispatchEvent(new Event("scroll"));
+    // Force browser repaint
+    document.body.offsetHeight;
+
+    // Header ko force render karo
+    const header = document.querySelector(".header");
+
+    if (header) {
+        header.style.display = "none";
+
+        requestAnimationFrame(() => {
+            header.style.display = "";
+            header.classList.toggle("sticky", window.scrollY > 50);
+        });
+    }
+
+    // Sab resize/scroll events dobara trigger karo
+    setTimeout(() => {
+        window.dispatchEvent(new Event("resize"));
+        window.dispatchEvent(new Event("scroll"));
+    }, 50);
 
 }, 800);
 

@@ -92,10 +92,14 @@ window.addEventListener("scroll", () => {
 // Initialize Header
 // =========================
 
-window.addEventListener("load", () => {
-
+function initHeader() {
     header.classList.toggle("sticky", window.scrollY > 50);
+}
 
+window.addEventListener("load", initHeader);
+window.addEventListener("pageshow", initHeader);
+document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) initHeader();
 });
 
 // =========================

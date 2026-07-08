@@ -52,9 +52,13 @@
     top:0;
     left:0;
     width:100%;
-    z-index:999;
-    padding:22px 0;
-    transition:0.4s ease;
+    z-index:99999;
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition:.35s;
 }
 
 .header.sticky{
